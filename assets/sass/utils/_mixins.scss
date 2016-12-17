@@ -1,0 +1,30 @@
+
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+@mixin box-shadow($size) {
+    -moz-box-shadow:    0 2px rgba(0,0,0, $size);
+    -webkit-box-shadow: 0 2px rgba(0,0,0, $size);
+    box-shadow:         0 2px rgba(0,0,0, $size);
+}
+
+
+@mixin ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
