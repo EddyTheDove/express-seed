@@ -15,11 +15,11 @@ gulp.task('server', function() {
     options.env = process.env;
     options.env.NODE_ENV = 'development';
 
-    var server = gls('app.js', options, 32123);
+    var server = gls('server.js', options, 32123);
     server.start();
 
     gulp.watch([
-        'app.js',
+        'server.js',
         'routes/**/*.js',
         'app/controllers/**/*.js'
     ], function () {

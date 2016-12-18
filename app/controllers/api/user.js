@@ -1,7 +1,7 @@
 
 var UserController = {}
 
-UserController.getUser = function() {
+UserController.getUser = function(req, res) {
     res.json({
         name: 'John Doe',
         email: 'john@email.com',
