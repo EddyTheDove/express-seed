@@ -1,7 +1,7 @@
 # express-seed
 A Node JS seed project for developers with PHP (Laravel, Symfony) background.
 
-# clone it
+## clone it
 `git clone https://github.com/EddyTheDove/express-seed.git`
 
 # Make it your own
