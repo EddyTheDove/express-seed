@@ -4,7 +4,7 @@ import path from 'path';
 import webRouter from './routes/web';
 import apiRouter from './routes/api';
 
-const app = express();
+let app = express();
 
 app.set('view engine', 'jade')
 app.set('views', path.join(__dirname, 'views'))

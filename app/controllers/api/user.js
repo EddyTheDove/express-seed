@@ -1,5 +1,7 @@
 
-var UserController = {}
+
+import env from '../../../env';
+let UserController = {};
 
 UserController.getUser = function(req, res) {
     res.json({
@@ -9,5 +11,4 @@ UserController.getUser = function(req, res) {
     })
 }
 
-
-module.exports = UserController
+module.exports = UserController;
