@@ -1,0 +1,17 @@
+{
+  "name": "eddy",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Eddy Ella <eddy.insearch@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/EddyTheDove/express-seed",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
