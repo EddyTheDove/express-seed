@@ -13,7 +13,7 @@ rm -rf .git && git init && npm init
 npm install
 
 # Start development live-reload server
-gulp dev
+npm run dev
 
 # Start production server
 npm start

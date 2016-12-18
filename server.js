@@ -1,8 +1,3 @@
-// var express = require('express'),
-//     path = require('path'),
-//     webRouter = require('./routes/web'),
-//     apiRouter = require('./routes/api'),
-//     app = express()
 
 import express from 'express';
 import path from 'path';
