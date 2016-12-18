@@ -21,7 +21,7 @@ gulp.task('server', function() {
     gulp.watch([
         'app.js',
         'routes/**/*.js',
-        'controllers/**/*.js'
+        'app/controllers/**/*.js'
     ], function () {
         server.start();
     });

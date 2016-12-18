@@ -1,5 +1,5 @@
 var express = require('express')
-var controllers = require('../controllers/web')
+var controllers = require('../app/controllers/web')
 var router = express.Router()
 
 
@@ -24,5 +24,5 @@ router.all('app/*', function(req, res, next) {
 })
 
 
-//export module 
+//export module
 module.exports = router

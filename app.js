@@ -2,7 +2,6 @@ var express = require('express'),
     path = require('path'),
     webRouter = require('./routes/web'),
     apiRouter = require('./routes/api'),
-    sassMiddleware = require('node-sass-middleware'),
     app = express()
 
 app.set('view engine', 'jade')
