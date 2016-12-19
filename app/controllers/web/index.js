@@ -1,6 +1,5 @@
-//load all controllers in this folder
-var HomeController = require('./home'),
-    AuthController = require('./auth')
+import HomeController from './home'
+import AuthController from './auth'
 
 module.exports = {
     HomeController,

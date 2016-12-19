@@ -1,28 +1,30 @@
 
-var AuthController = {}
+let AuthController = {
+    //Sign Up
+    getSignup(req, res) {
+        res.render('auth/signup')
+    },
 
-//Sign Up
-AuthController.getSignup = function(req, res) {
-    res.render('auth/signup')
+
+    doSignup(req, res) {
+        res.json({
+            params: req.params
+        })
+    },
+
+    //Sign In
+    getSignin(req, res) {
+        res.render('auth/signin')
+    },
+
+    doSignin(req, res) {
+        res.json({
+            params: req.params
+        })
+    }
 }
 
-AuthController.doSignup = function(req, res) {
-    res.json({
-        params: req.params
-    })
-}
 
 
-//Sign In
-AuthController.getSignin = function(req, res) {
-    res.render('auth/signin')
-}
 
-AuthController.doSignin = function(req, res) {
-    res.json({
-        params: req.params
-    })
-}
-
-
-module.exports = AuthController;
+export default AuthController;

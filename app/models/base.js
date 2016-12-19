@@ -1,5 +1,5 @@
 import mysql from 'mysql';
-import db from '../../../config/db';
+import db from '../../config/db';
 
 
 let base = {
@@ -12,10 +12,10 @@ let base = {
                 return;
             }
 
-            connection.query(sql, params, (error, rows) => {
+            connection.query(sql, params, (error, result) => {
                 connection.release();
                 if (!error) {
-                    callback(rows);
+                    callback(result);
                 }
             })
 

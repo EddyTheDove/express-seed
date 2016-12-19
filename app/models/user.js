@@ -1,6 +1,4 @@
 import base from './base';
-import mysql from 'mysql';
-import db from '../../../config/db';
 
 const User = {
     all(callback) {
