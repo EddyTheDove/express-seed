@@ -1,14 +1,16 @@
+import User from '../models/user';
+
+const UserController = {
+    getUsers(req, res) {
+        User.all(req, res);
+    },
+
+    getUser(req, res) {
+        User.show(req, res);
+    }
+};
 
 
-import env from '../../../env';
-let UserController = {};
 
-UserController.getUser = function(req, res) {
-    res.json({
-        name: 'John Doe',
-        email: 'john@email.com',
-        is_active: true
-    })
-}
 
-module.exports = UserController;
+export default UserController;

@@ -1,7 +1,8 @@
-var express = require('express')
-var controllers = require('../app/controllers/api')
-var router = express.Router()
+import express from 'express'
+import controllers from '../app/controllers/api'
 
-router.get('/api', controllers.UserController.getUser)
+let router = express.Router();
+router.get('/api/users', controllers.UserController.getUsers)
+router.get('/api/users/:id', controllers.UserController.getUser)
 
-module.exports = router
+export default router
