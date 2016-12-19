@@ -2,34 +2,31 @@ import mysql from 'mysql';
 import db from '../../../config/db';
 
 
-let base = {};
-base.connect = function() {
-    console.log('Connecting to db', db);
-    let connection = mysql.createConnection(db);
-    connection.connect((error) => {
-        if (error) {
-            console.log('DB connection failed', error);
-            return false;
-        }
-    });
+let base = {
+    runSql(sql, params, callback) {
+        let pool = mysql.createPool(db);
+        pool.getConnection((error, connection) => {
+            if (error) {
+                connection.release();
+                console.log('DB connection failed', error);
+                return;
+            }
 
-    connection.on('close', () => console.log('DB connection closed'));
-    connection.on('error', (error) => console.log('DB connection error', error));
-    return connection;
+            connection.query(sql, params, (error, rows) => {
+                connection.release();
+                if (!error) {
+                    callback(rows);
+                }
+            })
+
+            connection.on('error', function(err) {
+                console.log('DB connection error on connection', error);
+                return;
+            });
+        });
+    }
+
 }
 
-
-base.runSql = function(sql, params, callback) {
-    let connection = base.connect();
-    let result = connection.query(sql, params, (error, results) => {
-        console.log("querying this", sql);
-        if (error) {
-            console.log('DB run error', error);
-        }
-    });
-
-    connection.end();
-    return result;
-}
 
 export default base;
