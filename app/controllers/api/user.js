@@ -11,6 +11,12 @@ const UserController = {
         User.show(req.params.id, (result) => {
             res.json(result)
         })
+    },
+
+    authenticate(req, res) {
+        User.show(req.params.id, (result) => {
+            res.json(result)
+        })
     }
 }
 

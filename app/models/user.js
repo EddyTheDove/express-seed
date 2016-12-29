@@ -14,6 +14,13 @@ const User = {
         base.runSql(sql, params, (result) => {
             callback(result)
         })
+    },
+
+    auth(params, callback) {
+        let sql = 'SELECT * FROM employees WHERE email = ?';
+        base.runSql(sql, params, (result) => {
+            callback(result)
+        })
     }
 };
 
