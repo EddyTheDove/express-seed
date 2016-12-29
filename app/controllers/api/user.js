@@ -1,4 +1,6 @@
-import User from '../../models/user';
+import User from '../../models/user'
+import bodyParser from 'body-parser'
+import jwt from 'jsonwebtoken'
 
 const UserController = {
     getUsers(req, res) {
@@ -14,7 +16,7 @@ const UserController = {
     },
 
     authenticate(req, res) {
-        User.show(req.params.id, (result) => {
+        User.auth(req.body.email, (result) => {
             res.json(result)
         })
     }

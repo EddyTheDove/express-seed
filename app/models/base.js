@@ -3,13 +3,13 @@ import db from '../../config/db';
 
 
 let base = {
-    runSql(sql, params, callback) {
+    runSql(sql, params, callback, errorCallBack) {
         let pool = mysql.createPool(db);
         pool.getConnection((error, connection) => {
             if (error) {
                 connection.release();
                 console.log('DB connection failed', error);
-                return;
+                errorCallBack(error);
             }
 
             connection.query(sql, params, (error, result) => {
@@ -17,6 +17,7 @@ let base = {
                 if (!error) {
                     callback(result);
                 }
+                return error
             })
 
             connection.on('error', function(err) {
