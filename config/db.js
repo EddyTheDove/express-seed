@@ -26,4 +26,4 @@ let db = {
     multipleStatements: true
 }
 
-export default db;
+export default sequelize;
